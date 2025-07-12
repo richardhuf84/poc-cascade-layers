@@ -1,0 +1,52 @@
+@layer reset, defaults, patterns, components, utilities, overrides;
+
+:root {
+  --color-danger: hsl(355 94.9% 38.4%);
+  --color-danger-light: hsl(355, 93%, 68%);
+  --color-text: black;
+}
+
+@layer defaults {
+  html {
+    color-scheme: light dark;
+    font-family: system-ui;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+}
+
+
+
+
+@layer components {
+  :root {
+    --alert-color-danger: var(--color-danger);
+  }
+
+  .alert {
+    border: 2px solid var(--alert-color-danger);
+    color: var(--color-black);
+    padding-block: 1rem;
+    padding-inline: 2rem;
+  }
+
+  .alert-title {
+    color: var(--alert-color-danger);
+  }
+}
+
+@layer overrides {
+  :root {
+    --alert-color-danger: var(--color-danger-light);
+  }
+}
+
