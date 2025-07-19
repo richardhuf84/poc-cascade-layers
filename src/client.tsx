@@ -3,11 +3,11 @@
 import type {ReactNode} from 'react';
 import {hydrate, fetchRSC} from '@parcel/rsc/client';
 
-let updateRoot = hydrate({
+const updateRoot = hydrate({
   // Setup a callback to perform server actions.
   // This sends a POST request to the server, and updates the page with the response.
   async callServer(id, args) {
-    let {result, root} = await fetchRSC<{root: ReactNode, result: any}>(location.pathname, {
+    const {result, root} = await fetchRSC<{root: ReactNode, result: any}>(location.pathname, {
       method: 'POST',
       headers: {
         'rsc-action-id': id,
@@ -27,7 +27,7 @@ let updateRoot = hydrate({
 // and in a React transition, stream in the new page. Once complete, we'll pushState to 
 // update the URL in the browser.
 async function navigate(pathname: string, push = false) {
-  let root = await fetchRSC<ReactNode>(pathname);
+  const root = await fetchRSC<ReactNode>(pathname);
   updateRoot(root, () => {
     if (push) {
       history.pushState(null, '', pathname);
@@ -37,7 +37,7 @@ async function navigate(pathname: string, push = false) {
 
 // Intercept link clicks to perform RSC navigation.
 document.addEventListener('click', e => {
-  let link = (e.target as Element).closest('a');
+  const link = (e.target as Element).closest('a');
   if (
     link &&
     link instanceof HTMLAnchorElement &&
@@ -58,6 +58,6 @@ document.addEventListener('click', e => {
 });
 
 // When the user clicks the back button, navigate with RSC.
-window.addEventListener('popstate', e => {
+window.addEventListener('popstate', () => {
   navigate(location.pathname);
 });

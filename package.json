@@ -12,22 +12,31 @@
       }
     }
   },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "lint": "npx eslint src/**"
   },
   "dependencies": {
+    "@atlaskit/eslint-plugin-ui-styling-standard": "^1.4.2",
     "@parcel/rsc": "^2.14.3",
     "express": "^4.21.2",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.31.0",
     "@types/express": "^4",
-    "@types/parcel-env": "^0.0.6",
     "@types/node": "^22.10.5",
+    "@types/parcel-env": "^0.0.6",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "parcel": "^2.14.0"
+    "eslint": "^9.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
+    "parcel": "^2.14.0",
+    "typescript-eslint": "^8.37.0"
   }
 }

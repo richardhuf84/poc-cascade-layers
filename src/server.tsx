@@ -13,8 +13,8 @@ app.get('/', async (req, res) => {
 });
 
 app.post('/', async (req, res) => {
-  let id = req.get('rsc-action-id');
-  let {result} = await callAction(req, id);
+  const id = req.get('rsc-action-id');
+  const {result} = await callAction(req, id);
   let root: any = <Page />;
   if (id) {
     root = {result, root};
