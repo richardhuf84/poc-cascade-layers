@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    // ...
+    [
+      // You can also set these options on @babel/preset-react
+      // directly.
+      "@babel/plugin-transform-react-jsx",
+      {
+        "runtime": "automatic",
+        "importSource": "@compiled/react"
+      }
+    ]
+  ]
+}

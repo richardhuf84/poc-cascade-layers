@@ -1,0 +1,25 @@
+@layer reset, defaults, patterns, components, utilities, overrides;
+
+:root {
+  --color-danger: hsl(355 94.9% 38.4%);
+  --color-danger-light: hsl(355, 75%, 80%);
+  --color-text: black;
+}
+
+@layer defaults {
+  html {
+    color-scheme: light dark;
+    font-family: system-ui;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+}

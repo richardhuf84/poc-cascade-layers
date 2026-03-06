@@ -1,0 +1,14 @@
+@layer overrides {
+  :root {
+    --alert-color-danger: var(--color-danger-light, pink);
+  }
+
+  .alert {
+    border-color: var(--alert-color-danger);
+  }
+
+  .alert-title {
+    color: var(--alert-color-danger);
+  }
+}
+

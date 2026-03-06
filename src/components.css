@@ -1,0 +1,19 @@
+@layer components {
+  :root {
+    --alert-color-danger: var(--color-danger);
+  }
+
+  .alert {
+    border-width: 2px ;
+    border-style: solid ;
+    border-color: var(--alert-color-danger);
+    color: var(--color-black);
+    padding-block: 1rem;
+    padding-inline: 2rem;
+  }
+
+  .alert-title {
+    color: var(--alert-color-danger);
+    margin: 0;
+  }
+}

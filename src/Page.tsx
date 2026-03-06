@@ -1,6 +1,8 @@
 "use server-entry";
 
-import './page.css';
+import './base.css';
+import './components.css';
+import './overrides.css';
 import './client';
 import { Alert } from './Alert';
 import { Counter } from './Counter';
@@ -13,6 +15,9 @@ export async function Page() {
         <title>Parcel React Server App</title>
       </head>
       <body>
+        <Alert title="Alert: All Systems Red">
+          Murderbot secunit on the loose!
+        </Alert>
         <h1>Parcel React Server App</h1>
         <p>This page is a React Server Component! Edit <code>src/Page.tsx</code> to get started.</p>
         <p>Here is a client component: <Counter /></p>
@@ -23,9 +28,6 @@ export async function Page() {
           <button>Submit</button>
         </form>
         {name && <p>Welcome {name}!</p>}
-
-        <Alert title="All Systems Red">Murderbot secunit on the loose!
-          </Alert>
       </body>
     </html>
   );
